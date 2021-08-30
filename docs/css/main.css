@@ -318,5 +318,11 @@ body::-webkit-scrollbar-thumb,
         margin: .5rem auto;
         padding: 1.5rem 1rem;
     }   
+    .section{
+        flex-direction: column;
+    }
+    .section--articul{
+        width:90%
+    }
 }
 
