@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Covid-19</title>
+</head>
+<body id="body">
+    <header class="header">
+        <h1 class="header--h1">Covid-19</h1>
+    </header>
+    <table id="table--day" class="table">
+        <tr class="table--tr table--tr--primary">
+            <td class="table--tr--td"> </td>
+            <td class="table--tr--td">Confirmed</td>
+            <td class="table--tr--td">Deaths</td>
+            <td class="table--tr--td">Recovered</td>
+        </tr>
+        <tr id="table--tr__new" class="table--tr">
+            <td class="table--tr--td">New</td>
+            <td id="table--tr__new__confirmed" class="table--tr--td">Loading...</td>
+            <td id="table--tr__new__deaths" class="table--tr--td">Loading...</td>
+            <td id="table--tr__new__recovered" class="table--tr--td">Loading...</td>
+        </tr>
+        <tr id="table--tr__total" class="table--tr">
+            <td class="table--tr--td">Total</td>
+            <td id="table--tr__total__confirmed" class="table--tr--td">Loading...</td>
+            <td id="table--tr__total__deaths" class="table--tr--td">Loading...</td>
+            <td id="table--tr__total__recovered" class="table--tr--td">Loading...</td>
+            
+        </tr>
+    </table>
+    <form id="form-sheare" onsubmit="return false" class="form">
+        <label for="countries" class="form--label">Filter for country: </label>
+        <select name="countries" class="form--select" id="countries">
+        </select>
+        <div id="form-buttos" class="buttons">
+            <input type="submit" class="form--sudmit" onclick="getCountry();" value="sheare">
+            <!-- mas input agregado con nativo -->
+        </div>
+    </form>
+    <section id="modal-country" class="modal">
+        <h1 id="contry-select" class="h1-country"></h1>
+        <div class="linertime" id="cases">
+        </div>
+        
+        <button onclick="closeModal('modal-country')" class="modal-close"> EXIT </button>
+    </section>
+
+    <section id="" class="section">
+        <div class="section--articul">
+            <h1 class="articul--h1">Sintomas</h1>
+            <ul class="articul--ul">
+                <li id="li-1" class="articul--li">
+                    leves:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">Fiebre</li>
+                        <li class="articul--li--li">Tos seca</li>
+                        <li class="articul--li--li">Casancio</li>
+                    </ul>
+                </li>
+                <li id="li-2" class="articul--li">
+                    Moderados:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">molestias y dolores</li>
+                        <li class="articul--li--li">Dolor de garganta</li>
+                        <li class="articul--li--li">Diarra</li>
+                        <li class="articul--li--li">Conjuntivitis</li>
+                        <li class="articul--li--li">Dolor de cabeza</li>
+                        <li class="articul--li--li">Pérdida del sentido del olfato o del gusto</li>
+                        <li class="articul--li--li">Erupciones cutáneas o pérdida del color 
+                            en los dedos de las manos o de los pies
+                        </li>
+                    </ul>
+                </li>
+                <li id="li-3" class="articul--li">
+                    Graves:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">Dificultad para respirar o sensación de falta de aire</li>
+                        <li class="articul--li--li">Dolor o presión en el pecho</li>
+                        <li class="articul--li--li">Incapacidad para hablar o moverse</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>  
+        <div class="section--articul">
+            <h1 class="articul--h1">Cuidados principales</h1>
+            <ul class="articul--ul">
+                <li id="li-4" class="articul--li">
+                    Distanciamiento social:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">
+                            mantener un margen de minimo 2 metros entre personas
+                        </li>
+                    </ul>
+                </li>
+                <li id="li-5" class="articul--li">
+                    Uso del Barbijo/cubre vocas:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">
+                            El uso del cubre vocas disminuye la propagacion del virus mientras
+                            te comunicas oralmente
+                        </li>
+                    </ul>
+                </li>
+                <li id="li-6" class="articul--li">
+                    Ambiente:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">Estornudar en el codo</li>
+                        <li class="articul--li--li">Ventilar espacios cerrados</li>
+                        <li class="articul--li--li">No te toques la cara</li>
+                    </ul>
+                </li>
+                <li id="li-7" class="articul--li">
+                    Lavado de manos:
+                    <ul class="articul--li--ul">
+                        <li class="articul--li--li">Cuando vuelves a tu casa</li>
+                        <li class="articul--li--li">Al salir de casa</li>
+                        <li class="articul--li--li">Antes y despues de saludar a alguien o intercambio de algun objeto</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>  
+
+
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

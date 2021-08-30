@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
+
+:root{
+    --primary: #303ED1;
+    --tono-1: #303ed17c;
+    --tono-obscuro: #2A36B8;
+    --triada-2: #30D172;
+    --triada-2-obscuro-1: #186939;
+    --tirada-2-tono-1: #3AC774;
+    --tirada-2-tono-5: #768A7E;
+    --triada-3: #D17230;
+    --background-modal: rgba(0, 0, 0, 0.6);
+}   
+
+*{
+    margin:0;
+    padding: 0;
+    outline: none;
+}
+body{
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body::-webkit-scrollbar,
+.linertime::-webkit-scrollbar{
+    width: .1em;
+}
+   
+body::-webkit-scrollbar-track,
+.linertime::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+ 
+body::-webkit-scrollbar-thumb,
+.linertime::-webkit-scrollbar-thumb {
+    background-color:var(--tirada-2-tono-5);
+    border-radius: 2px;
+}
+
+
+.header{
+    background-color: var(--primary);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+}
+.header--h1{
+    color:white;
+    text-align: center;
+}
+
+.table{  
+    width: 80%;
+    color:white;
+    border: 1px transparent solid ;
+    border-collapse: collapse;
+    margin: 2rem auto;
+    z-index: 10;
+}
+.table--tr--td{
+    padding: 1rem;
+    background-color: var(--tono-1);
+}
+.table--tr:first-child{
+    background-color: var(--primary);
+}
+.form{
+    flex-direction: column;
+    width: 30%;
+    background: var(--triada-2);
+    padding: 1rem 2rem;
+    margin-left: 4rem;
+    border-radius: 10px;
+}
+.form--label{
+    color: white;
+    font-size: 1.4em;
+}
+.form--select{
+    width: 100%;
+    height: 2.5rem;
+    font-size:1.2em;
+    color: var(--tirada-2-tono-1);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin: 10px 0 20px 0;
+}
+.buttons{
+
+    width: 100%;
+}
+.form--sudmit{
+    width: 40%;
+    height: 2rem;
+    font-size: 1.1em;
+    background-color: white;
+    border: 2px solid var(--triada-3);
+    border-radius: 5px;
+    color:var(--triada-3);
+    transition: .3s;
+}
+.form--sudmit:hover{
+    cursor: pointer;
+    background-color: var(--triada-3);
+    color:white;
+    width: 35%;
+    transform: translateY(-5px);
+}
+#button-info{
+    margin-left:2rem;
+}
+.h1-country{
+    padding: 10px 20px;
+    font-size: 2em;
+    color:white;
+    background-color: var(--triada-2-obscuro-1);
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px black;
+}
+.linertime{
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+    width: 95%;
+    height: 60vh;
+    padding: 2rem 0;
+    overflow: auto;
+}
+
+.linertime--fech{
+    width:25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color:white;
+    margin: 1rem auto;
+    padding: 1.5rem 1rem;
+    background-color: var(--triada-2-obscuro-1);
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px black;
+}
+
+.linertime--fech--case{
+    font-size: 1.2em;
+    padding: 0px 10px;
+    width: auto;
+    border-radius: 10px;
+}
+
+.linertime--fech--date{
+    font-size: 1.4em;
+    text-shadow: 0px 0px 20px black;
+}
+.loading{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-modal);
+}
+.loading--div{
+    width:278px;
+    height:278px;
+    border-radius: 50%;
+    background: url('../img/mapa.png') #303ed17c;
+    background-size: cover;
+    z-index: 20; 
+    animation: load 4s linear infinite;
+}
+
+@keyframes load {
+    from {
+        background-position: left center;
+    }
+    to {
+        background-position: -500px center;
+    }
+} 
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Josefin Sans', sans-serif;
+    opacity: 0;
+    z-index: -10;
+    transition: .2s linear;
+    background-color: var(--background-modal);
+}
+.open-modal{
+    opacity: 1;
+    z-index: 10;
+}
+.modal-close{
+    padding: 10px 20px;
+    font-size: 1em;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    cursor:pointer;
+    color:white;
+    
+    background-color: var(--triada-2-obscuro-1);
+    border: 2px solid white;
+    box-shadow: 0px 0px 20px black;
+}
+.modal-close:hover{
+    box-shadow: 0px 0px 20px black, -5px 5px black;
+}
+.modal-close:active{
+    transform: translate(-5px, 5px);
+    box-shadow: 0px 0px 20px black;
+}
+.section{
+    display: flex;
+    align-items:flex-start;
+    margin: 2rem 0;
+}
+.section--articul{
+    margin: 0 auto;
+    width: 40%;
+    
+}
+.articul--h1{
+    font-size:2em;
+    text-align: center;
+    color: var(--tirada-2-tono-5);
+    margin-bottom: 1rem;
+}
+.articul--ul{
+
+}
+.articul--li{
+    cursor: pointer;
+    padding: 1rem .5rem;
+    font-size:1.3em;
+    list-style: none;
+    color:white;
+    background-color: var(--triada-2);
+    border: 3px solid var(--triada-2);
+    border-radius: 15px;
+    margin-top: 10px
+}
+.articul--li:hover{
+    transition: .1s linear;
+    color:var(--triada-2);
+    background-color: transparent;
+}
+.articul--li--ul{
+    font-size:.8em;    height: 0px;
+    overflow: hidden;
+    transition: .4s linear;
+    opacity: 0;
+}
+.ul-active{
+    padding: .5rem 2rem;
+    height: auto;
+    opacity:1;
+
+}
+
+@media(max-width:1224px){
+    body{
+        font-size: 15px;
+    }
+    .form{
+        width: 50%;
+        padding: 1rem 2rem;
+        margin-left: 4rem;
+    }
+    .linertime--fech{
+        width:35%;
+        margin: .5rem auto;
+        padding: 1.5rem 1rem;
+    }   
+}
+@media(max-width:768px){
+    body{
+        font-size: 14px;
+    }
+    .form{
+        width: 70%;
+        padding: .8rem 1.6rem;
+        margin-left: 2rem;
+    }
+    .linertime--fech{
+        width:40%;
+        margin: .5rem auto;
+        padding: 1.5rem 1rem;
+    }   
+
+}
+@media(max-width:500px){
+    body{
+        font-size: 13px;
+    }
+    .form{
+        width: 80%;
+        padding: .8rem 1.6rem;
+        margin: auto;
+    }
+    .linertime--fech{
+        width:60%;
+        margin: .5rem auto;
+        padding: 1.5rem 1rem;
+    }   
+}
+
