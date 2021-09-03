@@ -14,9 +14,9 @@ const init = async() => {
     }
 }
 const addCasesTable = (newConfirmed,newDeaths,newRecovered,totalConfirmed,totalDeaths,totalRecovered) =>{
-    document.getElementById("table--tr__new__confirmed").innerText = newConfirmed;
-    document.getElementById("table--tr__new__deaths").innerText = newDeaths;
-    document.getElementById("table--tr__new__recovered").innerText = newRecovered;
+    document.getElementById("table--tr__new__confirmed").innerText = (newConfirmed < 0) ? "error" : newConfirmed;
+    document.getElementById("table--tr__new__deaths").innerText = (newDeaths < 0) ? "error" : newDeaths;
+    document.getElementById("table--tr__new__recovered").innerText = (newRecovered < 0) ? "error" : newRecovered;
 
     document.getElementById("table--tr__total__confirmed").innerText = totalConfirmed;
     document.getElementById("table--tr__total__deaths").innerText = totalDeaths;
@@ -127,7 +127,7 @@ const closeModal = (modalId) => document.getElementById(modalId).classList.remov
 const addButtonModal = () => {
     if(document.getElementById("button-info")) return false
     let button = document.createElement("button");
-    button.innerText = "mas informacion";
+    button.innerText = "More information";
     button.classList.add("form--sudmit");
     button.id = "button-info";
     let form = document.getElementById("form-buttos").appendChild(button);

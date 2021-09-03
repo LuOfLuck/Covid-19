@@ -242,7 +242,10 @@ body::-webkit-scrollbar-thumb,
     margin-bottom: 1rem;
 }
 .articul--ul{
-
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .articul--li{
     cursor: pointer;
@@ -273,6 +276,15 @@ body::-webkit-scrollbar-thumb,
 
 }
 
+
+.footer{
+    background-color: var(--tirada-2-tono-5);
+    padding: 1rem 0;
+}
+.footer--p{
+    text-align: center;
+    color:white;
+}
 @media(max-width:1224px){
     body{
         font-size: 15px;
@@ -324,5 +336,8 @@ body::-webkit-scrollbar-thumb,
     .section--articul{
         width:90%
     }
+    .modal-close{
+        top: 30px;
+        right: 30px;
+    }
 }
-
